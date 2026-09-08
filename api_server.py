@@ -85,7 +85,6 @@ def get_person(name):
 
 
 @app.post("/people")
-@require_write_key
 def add_person():
     person = request.get_json(silent=True) or {}
     name = str(person.get("name", "")).strip()
